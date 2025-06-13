@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Photon Physics - Student Panel</title>
+    <script type="module">
+        // Import Firebase SDK
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+        import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBBwpd0Z1T5elVhFZwNr8MJB2YKeUPeRYU",
+            authDomain: "photonphysics-1254.firebaseapp.com",
+            databaseURL: "https://photonphysics-1254-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "photonphysics-1254",
+            storageBucket: "photonphysics-1254.appspot.com",
+            messagingSenderId: "196923024550",
+            appId: "1:196923024550:web:282330f9ee5e77d62dc067"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
+        // Fetch data from Firebase
+        window.onload = () => {
+            const courseDiv = document.getElementById("content");
+            const dbRef = ref(db, '/');
+            onValue(dbRef, (snapshot) => {
+                const data = snapshot.val();
+                courseDiv.innerHTML = '';
+                for (let className in data) {
+                    courseDiv.innerHTML += `<h2>Class ${className}</h2>`;
+                    for (let year in data[className]) {
+                        courseDiv.innerHTML += `<h3>Year ${year}</h3>`;
+                        for (let chapter in data[className][year]) {
+                            const item = data[className][year][chapter];
+                            courseDiv.innerHTML += `
+                                <div>
+                                    <h4>${chapter}</h4>
+                                    <p><a href="${item.video}" target="_blank">Lecture Video</a></p>
+                                    <p><a href="${item.notes}" target="_blank">PDF Notes</a></p>
+                                    <p><a href="${item.assignment}" target="_blank">Assignment</a></p>
+                                </div><hr>`;
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Photon Physics - Student Panel</h1>
+    <div id="content">Loading data...</div>
+</body>
+</html>
