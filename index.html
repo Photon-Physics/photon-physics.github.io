@@ -2,135 +2,100 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Photon Physics</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #ffffff;
-            color: #222;
-        }
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #ffffff; }
         header {
-            background: #ccf5e7; /* light green shade */
-            color: #000000;
-            padding: 10px 20px;
+            background-color: #d4f7e2;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
+            padding: 10px 20px;
             position: relative;
         }
-        header img {
-            height: 40px;
-        }
-        nav {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
-        nav .dropdown {
-            position: relative;
-        }
-        nav a {
-            color: #000000;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 5px 10px;
-        }
-        nav .dropdown-content {
+        header img { height: 40px; margin-right: 10px; }
+        .logo { display: flex; align-items: center; font-size: 24px; font-weight: bold; color: #000; }
+        nav { display: flex; gap: 20px; position: relative; }
+        .dropdown { position: relative; }
+        .dropbtn { background: none; border: none; font-size: 18px; font-weight: bold; cursor: pointer; }
+        .dropdown-content {
             display: none;
             position: absolute;
-            top: 100%;
+            top: 40px;
             left: 0;
-            background-color: #333;
-            min-width: 180px;
+            background-color: #222;
+            min-width: 200px;
             z-index: 1;
             border-radius: 5px;
+            padding: 10px 0;
         }
-        nav .dropdown-content a {
+        .dropdown-content a {
             color: white;
-            padding: 10px 15px;
+            padding: 10px 20px;
+            text-decoration: none;
             display: block;
         }
-        nav .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px;
-        }
-        h1 {
-            margin-top: 20px;
-            color: #000000;
-        }
-        ul {
-            list-style-type: square;
-            margin-left: 20px;
-        }
-        footer {
-            background-color: #000000;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            margin-top: 50px;
-        }
+        .dropdown-content a:hover { background-color: #444; }
+        .dropdown:hover .dropdown-content { display: block; }
         @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                gap: 10px;
-            }
+            nav { flex-direction: column; align-items: flex-start; }
+            .dropdown-content { left: auto; right: 0; }
         }
+        main { padding: 40px 20px; max-width: 900px; margin: auto; }
+        footer { text-align: center; padding: 10px; background-color: black; color: white; }
     </style>
 </head>
 <body>
 
 <header>
-    <div style="display: flex; align-items: center;">
-        <img src="logo.png" alt="Photon Physics Logo">
-        <h2 style="margin-left: 10px;">Photon Physics</h2>
+    <div class="logo">
+        <img src="logo.png" alt="Logo">
+        Photon Physics
     </div>
     <nav>
         <div class="dropdown">
-            <a href="#">Home</a>
+            <button class="dropbtn">Home</button>
             <div class="dropdown-content">
                 <a href="#">Course Details</a>
                 <a href="#">Registration & Contact</a>
             </div>
         </div>
         <div class="dropdown">
-            <a href="#">Batches</a>
+            <button class="dropbtn">Batches</button>
             <div class="dropdown-content">
-                <a href="#">CLASS 11</a>
-                <a href="#">CLASS 12</a>
-                <a href="#">DROPPER</a>
+                <a href="#">Class 11</a>
+                <a href="#">Class 12</a>
+                <a href="#">Dropper</a>
             </div>
         </div>
-        <a href="resources.html">Resources</a>
+        <a href="resources.html" style="font-weight: bold; font-size: 18px;">Resources</a>
     </nav>
 </header>
 
-<div class="container">
+<main>
     <h1>Welcome to Photon Physics.</h1>
-    <p>Your gateway to mastering <b>Physics</b> with clarity, confidence, and competitive edge.</p>
-    <p>At <b>Photon Physics</b>, we focus on building strong <b>conceptual understanding</b> from the ground up — tailored specially for WBCHSE students, yet enriched with <b>JEE-level depth</b>. Whether you're preparing for your school exams or aiming higher, our method combines:</p>
+    <p>Your gateway to mastering <strong>Physics</strong> with clarity, confidence, and competitive edge.</p>
+
+    <p>At <strong>Photon Physics</strong>, we focus on building strong <strong>conceptual understanding</strong> from the ground up — tailored specially for WBCHSE students, yet enriched with <strong>JEE-level depth</strong>. Whether you're preparing for your school exams or aiming higher, our method combines:</p>
+
     <ul>
         <li>Crystal-clear concept explanations</li>
         <li>Problem-solving</li>
         <li>Daily practice problems & doubt clearing</li>
         <li>And smart guidance that actually works</li>
     </ul>
-    <p>We believe Physics should be <b>logical, intuitive, and enjoyable</b> — not just memorized. Let Physics be not just a subject, but your <b>STRENGTH</b>.</p>
-    <hr>
-    <p>Hello! I’m Arko Das, a Physics graduate from <b>Ramakrishna Mission Vivekananda Centenary College (RKMVCC)</b> — one of West Bengal’s premier institutions for science education. As an <b>alumnus of the Ramakrishna Mission</b>, I’ve been deeply influenced by its values of clarity, discipline, and service through knowledge.</p>
-    <p>With a strong foundation in core Physics and a passion for teaching, I founded <b>Photon Physics</b> to help <b>Class 11 & 12 students</b> develop real conceptual understanding and problem-solving skills.</p>
-</div>
 
-<footer>
-    &copy; 2025 Photon Physics. All rights reserved.
-</footer>
+    <p>We believe Physics should be <strong>logical, intuitive, and enjoyable</strong> — not just memorized. Let Physics be not just a subject, but your <strong>STRENGTH</strong>.</p>
+
+    <hr>
+
+    <p>Hello! I’m Arko Das, a Physics graduate from <strong>Ramakrishna Mission Vivekananda Centenary College (RKMVCC)</strong> — one of West Bengal’s premier institutions for science education. As an <strong>alumnus of the Ramakrishna Mission</strong>, I’ve been deeply influenced by its values of clarity, discipline, and service through knowledge.</p>
+
+    <p>With a strong foundation in core Physics and a passion for teaching, I founded <strong>Photon Physics</strong> to help <strong>Class 11 & 12 students</strong> develop real conceptual understanding and problem-solving skills.</p>
+</main>
+
+<footer>© 2025 Photon Physics. All rights reserved.</footer>
 
 </body>
 </html>
