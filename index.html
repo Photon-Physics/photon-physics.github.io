@@ -1,134 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Photon Physics - Learn Smart</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      margin: 0;
-      padding: 20px;
-    }
-    header {
-      background: #007BFF;
-      color: white;
-      padding: 15px;
-      text-align: center;
-      font-size: 24px;
-    }
-    .filter {
-      margin: 20px 0;
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .card {
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-      padding: 15px;
-      margin: 10px 0;
-    }
-    iframe {
-      width: 100%;
-      height: 300px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photon Physics</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #ffffff;
+            color: #222;
+        }
+        header {
+            background: linear-gradient(90deg, #000000, #009999);
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        header img {
+            height: 40px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        h1 {
+            margin-top: 20px;
+            color: #000000;
+        }
+        ul {
+            list-style-type: square;
+            margin-left: 20px;
+        }
+        footer {
+            background-color: #000000;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 50px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            nav {
+                margin-top: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<header>Photon Physics</header>
+<header>
+    <div style="display: flex; align-items: center;">
+        <img src="YOUR_LOGO_URL_HERE" alt="Photon Physics Logo">
+        <h2 style="margin-left: 10px;">Photon Physics</h2>
+    </div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Batches</a>
+        <a href="#">Resources</a>
+    </nav>
+</header>
 
-<div class="filter">
-  <select id="yearFilter">
-    <option value="">Select Year</option>
-  </select>
+<div class="container">
+    <h1>Welcome to Photon Physics.</h1>
+    <p>Your gateway to mastering <b>Physics</b> with clarity, confidence, and competitive edge.</p>
+    <p>At <b>Photon Physics</b>, we focus on building strong <b>conceptual understanding</b> from the ground up — tailored specially for WBCHSE students, yet enriched with <b>JEE-level depth</b>. Whether you're preparing for your school exams or aiming higher, our method combines:</p>
+    <ul>
+        <li>Crystal-clear concept explanations</li>
+        <li>Problem-solving</li>
+        <li>Daily practice problems & doubt clearing</li>
+        <li>And smart guidance that actually works</li>
+    </ul>
+    <p>We believe Physics should be <b>logical, intuitive, and enjoyable</b> — not just memorized. Let Physics be not just a subject, but your <b>STRENGTH</b>.</p>
 
-  <select id="classFilter">
-    <option value="">Select Class</option>
-  </select>
+    <hr>
+
+    <p>Hello! I’m Arko Das, a Physics graduate from <b>Ramakrishna Mission Vivekananda Centenary College (RKMVCC)</b> — one of West Bengal’s premier institutions for science education. As an <b>alumnus of the Ramakrishna Mission</b>, I’ve been deeply influenced by its values of clarity, discipline, and service through knowledge.</p>
+
+    <p>With a strong foundation in core Physics and a passion for teaching, I founded <b>Photon Physics</b> to help <b>Class 11 & 12 students</b> develop real conceptual understanding and problem-solving skills.</p>
 </div>
 
-<div id="content"></div>
-
-<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
-
-<script>
-  const firebaseConfig = {
-    apiKey: "AIzaSyBBwpd0Z1T5elVhFZwNr8MJB2YKeUPeRYU",
-    authDomain: "photonphysics-1254.firebaseapp.com",
-    databaseURL: "https://photonphysics-1254-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId: "photonphysics-1254",
-    storageBucket: "photonphysics-1254.appspot.com",
-    messagingSenderId: "196923024550",
-    appId: "1:196923024550:web:282330f9ee5e77d62dc067"
-  };
-
-  firebase.initializeApp(firebaseConfig);
-  const db = firebase.database();
-
-  const yearFilter = document.getElementById('yearFilter');
-  const classFilter = document.getElementById('classFilter');
-  const content = document.getElementById('content');
-
-  function loadData() {
-    db.ref('lectures').once('value', snapshot => {
-      const data = snapshot.val();
-      const years = new Set();
-      const classes = new Set();
-      content.innerHTML = '';
-
-      for (let id in data) {
-        years.add(data[id].year);
-        classes.add(data[id].class);
-      }
-
-      yearFilter.innerHTML = '<option value="">Select Year</option>';
-      years.forEach(y => {
-        yearFilter.innerHTML += `<option value="${y}">${y}</option>`;
-      });
-
-      classFilter.innerHTML = '<option value="">Select Class</option>';
-      classes.forEach(c => {
-        classFilter.innerHTML += `<option value="${c}">${c}</option>`;
-      });
-
-      renderData(data);
-    });
-  }
-
-  function renderData(data) {
-    content.innerHTML = '';
-    for (let id in data) {
-      if ((yearFilter.value === '' || data[id].year === yearFilter.value) &&
-          (classFilter.value === '' || data[id].class === classFilter.value)) {
-        const item = data[id];
-        content.innerHTML += `
-          <div class="card">
-            <h3>${item.chapter}</h3>
-            <iframe src="https://www.youtube.com/embed/${extractYouTubeID(item.video)}" frameborder="0" allowfullscreen></iframe>
-            <p><a href="${item.notes}" target="_blank">Download Notes (PDF)</a></p>
-            <p><a href="${item.assignment}" target="_blank">Download Assignment</a></p>
-          </div>
-        `;
-      }
-    }
-  }
-
-  function extractYouTubeID(url) {
-    const regExp = /(?:youtube\.com.*(?:\?v=|\/embed\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
-    const match = url.match(regExp);
-    return match ? match[1] : url;
-  }
-
-  yearFilter.addEventListener('change', () => loadData());
-  classFilter.addEventListener('change', () => loadData());
-
-  loadData();
-</script>
+<footer>
+    &copy; 2025 Photon Physics. All rights reserved.
+</footer>
 
 </body>
 </html>
