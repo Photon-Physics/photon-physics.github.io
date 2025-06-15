@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Photon Physics - Class 11 (2026)</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-color: #f9fafb;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #00796b;
+    }
+
+    .chapter-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .chapter-card {
+      background: linear-gradient(to right, #a7ffeb, #e0f2f1);
+      border-radius: 12px;
+      padding: 20px 30px;
+      width: 260px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      text-align: center;
+      text-decoration: none;
+      color: #004d40;
+      font-size: 18px;
+      font-weight: bold;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .chapter-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+  </style>
+  <script>
+    function toggleMenu() {
+      document.querySelector('nav').classList.toggle('active');
+    }
+  </script>
+</head>
+<body>
+
+<header>
+  <div style="display: flex; align-items: center;">
+    <img src="logo.png" alt="Photon Physics Logo" style="height:50px;">
+    <h2 style="margin-left: 10px;">Photon Physics</h2>
+  </div>
+
+  <div class="hamburger" onclick="toggleMenu()">
+    <div></div><div></div><div></div>
+  </div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <div class="dropdown">
+      <a href="#">Batches ▼</a>
+      <div class="dropdown-content">
+        <a href="class11.html">Class 11</a>
+        <a href="class12.html">Class 12</a>
+      </div>
+    </div>
+    <a href="resources.html">Resources</a>
+    <a href="course.html">Course Details</a>
+    <a href="contact.html">Registration & Contact</a>
+  </nav>
+</header>
+
+<div class="container">
+  <h1>Class 11 - 2026 Batch</h1>
+
+  <div class="chapter-grid">
+    <a href="#" class="chapter-card">Physical World</a>
+    <a href="#" class="chapter-card">Units & Measurements</a>
+    <a href="#" class="chapter-card">Motion in a Straight Line</a>
+    <a href="#" class="chapter-card">Motion in a Plane</a>
+    <a href="#" class="chapter-card">Laws of Motion</a>
+    <a href="#" class="chapter-card">Work, Energy and Power</a>
+    <a href="#" class="chapter-card">System of Particles & Rotational Motion</a>
+    <a href="#" class="chapter-card">Gravitation</a>
+    <a href="#" class="chapter-card">Mechanical Properties of Solids</a>
+    <a href="#" class="chapter-card">Mechanical Properties of Fluids</a>
+    <a href="#" class="chapter-card">Thermal Properties of Matter</a>
+    <a href="#" class="chapter-card">Thermodynamics</a>
+    <a href="#" class="chapter-card">Kinetic Theory of Gases</a>
+    <a href="#" class="chapter-card">Oscillations</a>
+    <a href="#" class="chapter-card">Waves</a>
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 Photon Physics. All rights reserved.
+</footer>
+
+</body>
+</html>

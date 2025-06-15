@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photon Physics - Class 12</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function toggleMenu() {
+            document.querySelector('nav').classList.toggle('active');
+        }
+    </script>
+    <style>
+        .class12-card {
+            background: linear-gradient(to right, #ffe0b2, #f3e5f5);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            margin-top: 40px;
+            text-align: center;
+        }
+        .class12-card h2 {
+            font-size: 28px;
+            color: #d32f2f;
+            margin-bottom: 20px;
+        }
+        .class12-card p {
+            font-size: 18px;
+            color: #333;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div style="display: flex; align-items: center;">
+        <img src="logo.png" alt="Photon Physics Logo">
+        <h2 style="margin-left: 10px;">Photon Physics</h2>
+    </div>
+
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div><div></div><div></div>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+            <a href="#">Batches ▼</a>
+            <div class="dropdown-content">
+                <a href="class11.html">Class 11</a>
+                <a href="class12.html" class="active">Class 12</a>
+                <a href="dropper.html">Dropper</a>
+            </div>
+        </div>
+        <a href="resources.html">Resources</a>
+        <a href="course.html">Course Details</a>
+        <a href="contact.html">Registration & Contact</a>
+    </nav>
+</header>
+
+<div class="container">
+    <div class="class12-card">
+        <h2>Hey Class 12 Students!</h2>
+        <p>This is your Class 12 hub. Select your batch year to get access to your complete study materials, video lectures, assignments, notes and updates.</p>
+        <p>👉 Pick your batch and start learning</p>
+    </div>
+</div>
+
+<footer>
+    &copy; 2025 Photon Physics. All rights reserved.
+</footer>
+
+</body>
+</html>

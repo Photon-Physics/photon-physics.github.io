@@ -1,0 +1,164 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photon Physics - Resources</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function toggleMenu() {
+            document.querySelector('nav').classList.toggle('active');
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f9fafb;
+            font-family: 'Segoe UI', sans-serif;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .resource-card {
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin: 20px 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            background: #ffffff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .resource-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .resource-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .download-button {
+            display: inline-block;
+            background: linear-gradient(to right, #007cf0, #00dfd8);
+            color: white;
+            padding: 10px 22px;
+            margin-top: 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .download-button:hover {
+            transform: scale(1.08);
+            box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div style="display: flex; align-items: center;">
+        <img src="logo.png" alt="Photon Physics Logo" style="height:50px;">
+        <h2 style="margin-left: 10px;">Photon Physics</h2>
+    </div>
+
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div><div></div><div></div>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+            <a href="#">Batches ▼</a>
+            <div class="dropdown-content">
+                <a href="class11.html">Class 11</a>
+                <a href="class12.html">Class 12</a>
+                <a href="dropper.html">Dropper</a>
+            </div>
+        </div>
+        <a href="resources.html" class="active">Resources</a>
+        <a href="course.html">Course Details</a>
+        <a href="contact.html">Registration & Contact</a>
+    </nav>
+</header>
+
+<div class="container">
+    <h1>📚 Resources</h1>
+    <p>Welcome to the Photon Physics Resources page! All the important books for Class 11 and 12 Physics are here — simply click the DOWNLOAD button and start reading!</p>
+
+    <!-- Resource Cards Start -->
+    <div class="resource-card">
+        <h3>📘 Concepts of Physics – H. C. Verma [Vol 01]</h3>
+        <p>Clear your Physics fundamentals with this popular book.</p>
+        <a href="https://drive.google.com/open?id=1q-PFzpDStlFBDebuGSGQVwcnRB1NZ0rE&usp=drive_fs" target="_blank" class="download-button">📥 Download PDF</a>
+    </div>
+
+    <div class="resource-card">
+        <h3>📘 Concepts of Physics – H. C. Verma [Vol 02]</h3>
+        <p>Advanced concepts for class 11–12 boards and JEE.</p>
+        <a href="https://drive.google.com/open?id=1qwge546PApRaa8Rr96BbSWAjGpLjxtuX&usp=drive_fs" target="_blank" class="download-button">📥 Download PDF</a>
+    </div>
+
+    <div class="resource-card">
+        <h3>📗 Mechanics – D. C. Pandey [Vol 01]</h3>
+        <p>Ideal for beginners learning motion and force concepts.</p>
+        <a href="https://drive.google.com/open?id=1pqfNsGsOrI3MoWKQPMquSx68Dh8goZ_y&usp=drive_fs" target="_blank" class="download-button">📥 Download PDF</a>
+    </div>
+
+    <div class="resource-card">
+        <h3>📗 Mechanics – D. C. Pandey [Vol 02]</h3>
+        <p>Continue your mechanics journey with advanced problems.</p>
+        <a href="https://drive.google.com/open?id=1ptSw1P7o14z--Y0qEzZV1rHcU5GHY64s&usp=drive_fs" target="_blank" class="download-button">📥 Download PDF</a>
+    </div>
+
+    <div class="resource-card">
+        <h3>📕 Waves & Thermodynamics – D. C. Pandey</h3>
+        <p>Important topics for both NEET and JEE.</p>
+        <a href="https://drive.google.com/open?id=1ptun1305HJcj7r2z3hRrtIQTxE5Gm7H6&usp=drive_fs" target="_blank" class="download-button">📥 Download PDF</a>
+    </div>
+
+    <div class="resource-card">
+        <h3>⚡ Electricity & Magnetism – D. C. Pandey</h3>
+        <p>Understand current, fields and magnetic phenomena.</p>
+        <a href="https://drive.google.com/open?id=1px7pes3SygMLDxU9QznRcRJkeOan-Tm_&usp=drive_fs" target="_blank" class="download-button">📥 Download PDF</a>
+    </div>
+
+    <div class="resource-card">
+        <h3>🔬 Optics & Modern Physics – D. C. Pandey</h3>
+        <p>Light and atomic theories simplified.</p>
+        <a href="https://drive.google.com/open?id=1pxQDtnd8IXJAtU8pBIcahqIhdr-MGZvR&usp=drive_fs" target="_blank" class="download-button">📥 Download PDF</a>
+    </div>
+
+    <div class="resource-card">
+        <h3>📘 Mechanics by D. S. Mathur</h3>
+        <p>A classic book for building strong fundamentals in Mechanics.</p>
+        <a href="https://drive.google.com/open?id=13Oqg3TmZNhMn97FOuGVObkO7CinCujEM&usp=drive_fs" target="_blank" class="download-button">📥 Download PDF</a>
+    </div>
+
+    <div class="resource-card">
+        <h3>📗 Resnick, Halliday, Walker – Fundamentals of Physics</h3>
+        <p>Classic textbook for deep conceptual understanding of Physics.</p>
+        <a href="https://drive.google.com/open?id=1M2Wl0oMISDrbV3J6BwG0ha-o0LGMxhsW&usp=drive_fs" target="_blank" class="download-button">📥 Download PDF</a>
+    </div>
+
+    <div class="resource-card">
+        <h3>📗 Schaum's Outline – Vector Analysis</h3>
+        <p>A structured guide covering vector algebra, differentiation, integration, and applications, perfect for physics and engineering students seeking a solid foundation.</p>
+        <a href="https://drive.google.com/open?id=1-74zpYBWVy1OD818ZY014ZIX62bX1tA3&usp=drive_fs" target="_blank" class="download-button">📥 Download PDF</a>
+    </div>
+
+</div>
+
+<footer>
+    &copy; 2025 Photon Physics. All rights reserved.
+</footer>
+
+</body>
+</html>
