@@ -12,22 +12,46 @@
       margin: 0;
       padding: 0;
     }
+
+    header {
+      background-color: #ccffcc;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    header img {
+      height: 50px;
+    }
+
+    header h2 {
+      margin: 0;
+      font-weight: bold;
+      font-size: 22px;
+      color: #000;
+    }
+
     .container {
       max-width: 1000px;
       margin: auto;
       padding: 30px 20px;
     }
+
     h1 {
       text-align: center;
       margin-bottom: 40px;
       color: #00796b;
     }
+
     .chapter-grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
     }
+
     .chapter-card {
       background: linear-gradient(to right, #a7ffeb, #e0f2f1);
       border-radius: 12px;
@@ -41,55 +65,41 @@
       font-weight: bold;
       transition: transform 0.3s, box-shadow 0.3s;
     }
+
     .chapter-card:hover {
       transform: translateY(-8px);
       box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     }
-  </style>
-  <script>
-    function toggleMenu() {
-      document.querySelector('nav').classList.toggle('active');
+
+    footer {
+      background-color: #000;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 30px;
     }
-  </script>
+  </style>
 </head>
 <body>
 
-<header>
-  <div style="display: flex; align-items: center;">
-    <img src="logo.png" alt="Photon Physics Logo" style="height:50px;">
-    <h2 style="margin-left: 10px;">Photon Physics</h2>
-  </div>
-  <div class="hamburger" onclick="toggleMenu()">
-    <div></div><div></div><div></div>
-  </div>
-  <nav>
-    <a href="index.html">Home</a>
-    <div class="dropdown">
-      <a href="#">Batches ▼</a>
-      <div class="dropdown-content">
-        <a href="class11.html">Class 11</a>
-        <a href="class12.html">Class 12</a>
-      </div>
+  <header>
+    <img src="logo.png" alt="Photon Physics Logo" />
+    <h2>Photon Physics</h2>
+  </header>
+
+  <div class="container">
+    <h1>Class 11 - 2026 Batch</h1>
+
+    <div class="chapter-grid">
+      <a href="class11-2026-physical-world.html" class="chapter-card">Physical World</a>
+      <a href="class11-2026-units-measurements.html" class="chapter-card">Units & Dimensions</a>
+      <a href="class11-2026-motion-in-1D.html" class="chapter-card">Motion in 1-D</a>
     </div>
-    <a href="resources.html">Resources</a>
-    <a href="course.html">Course Details</a>
-    <a href="contact.html">Registration & Contact</a>
-  </nav>
-</header>
-
-<div class="container">
-  <h1>Class 11 - 2026 Batch</h1>
-
-  <div class="chapter-grid">
-    <a href="class11-2026-physical-world.html" class="chapter-card">Physical World</a>
-    <a href="class11-2026-units-measurements.html" class="chapter-card">Units & Measurements</a>
-    <a href="class11-2026-motion-in-1D.html" class="chapter-card">Motion iN 1-D</a>
   </div>
-</div>
 
-<footer>
-  &copy; 2025 Photon Physics. All rights reserved.
-</footer>
+  <footer>
+    &copy; 2025 Photon Physics. All rights reserved.
+  </footer>
 
 </body>
 </html>
